@@ -6,11 +6,11 @@ import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConecept/CoreConecept.jsx';
 import TabButton from './components/TabButton.jsx';
 
-
+import { EXAMPLES } from './data';
 
 
 function App() {
-  const [seletedTopic,setSelectedTopic] = useState('Please click a button');
+  const [seletedTopic,setSelectedTopic] = useState('components');
   console.log("Ex")
   let tabContent  = 'Please click a button';
 
@@ -48,7 +48,13 @@ function App() {
             <TabButton onSelect={() => handleClick('state')}>State</TabButton>
           </menu>
             
-            {seletedTopic}
+            <div id="tab-content">
+              <h3>{EXAMPLES[seletedTopic].title}</h3>
+              <p>{EXAMPLES[seletedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[seletedTopic].code}</code>
+              </pre>
+            </div>
 
           
         </section>
