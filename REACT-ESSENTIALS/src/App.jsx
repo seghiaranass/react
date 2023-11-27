@@ -10,9 +10,13 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
+  
+  let tabContent  = 'Please click a button';
+
   function handleClick(selectedButton){
     // selectedButton => 'componenets', 'jsx', 'props', 'state'
-    console.log(selectedButton);
+    tabContent = selectedButton
+    console.log(tabContent)
    }
   return (
     <div>
@@ -46,6 +50,7 @@ function App() {
             <TabButton onSelect={() => handleClick('state')}>State</TabButton>
           </menu>
             
+            {tabContent}
 
           
         </section>
